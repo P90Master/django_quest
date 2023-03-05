@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Example</title>
+    {% load menu %}
+</head>
+<body>
+    <!-- При попытке добавить несуществующее меню выбросит 404 -->
+    {% draw_menu 'root-1' %}
+    {% draw_menu 'root-2' %}
+</body>
+</html>

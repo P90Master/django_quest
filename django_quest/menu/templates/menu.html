@@ -1,0 +1,31 @@
+{% load menu %}
+
+<ul>
+{% for node in ancestors %}
+    <li>
+        <a href="{{ node.url }}">{{ node.name }}</a>
+        <ul>
+{% endfor %}
+    {% if current_node %}
+        <li>    
+            <a href="{{ node.url }}">
+                <strong>{{ current_node.name }}</strong>
+            </a>
+        </li>
+    {% endif %}
+        {% if childs %}
+            <ul>
+        {% endif %}
+        {% for node in childs %}
+                <li>
+                    <a href="{{ node.url }}">{{ node.name }}</a>
+                </li>
+        {% endfor %}
+        {% if childs %}
+            </ul>
+        {% endif %}
+{% for node in ancestors %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>
